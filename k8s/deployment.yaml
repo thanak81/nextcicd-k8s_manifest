@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw3nextjs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextjspod
+  template:
+    metadata: 
+      labels:
+        app: nextjspod
+    spec:
+      containers:
+      - name: nextjscontainer
+        image: thanak81/nextcicd
+        ports:
+        - containerPort: 3000
